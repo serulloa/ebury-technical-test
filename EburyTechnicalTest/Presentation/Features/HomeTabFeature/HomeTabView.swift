@@ -93,6 +93,33 @@ struct HomeTabView: View {
         .onAppear {
             UIRefreshControl.appearance().tintColor = .onBackground
         }
+        .sheet(isPresented: $vm.isViewAll, content: {
+            ZStack {
+                Color.surfaceVariant
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 0) {
+                    HStack {
+                        Text("All currencies")
+                            .font(.title)
+                            .padding()
+                            .bold()
+                            .foregroundStyle(.onBackground)
+                        Spacer()
+                    }
+                    .background {
+                        LinearGradient(colors: [.backgroundGradient2, .backgroundGradient1],
+                                       startPoint: .leading,
+                                       endPoint: .trailing)
+                    }
+                    
+                    ScrollView {
+                        WalletListView(currencies: vm.allCurrencies)
+                            .padding()
+                    }
+                }
+            }
+        })
     }
     
     // MARK: - Functions
@@ -100,8 +127,10 @@ struct HomeTabView: View {
     @ViewBuilder
     func activeTab() -> some View {
         if vm.tab == .home {
-            WalletView(vm: WalletViewModel(currencies: vm.wallets))
-                .padding(.bottom, 60)
+            WalletView(vm: WalletViewModel(currencies: vm.currencies)) {
+                vm.viewAllButtonPressed()
+            }
+            .padding(.bottom, 60)
         } else {
             ProductsView()
         }
@@ -159,8 +188,8 @@ struct HomeTabView: View {
 // MARK: - Preview
 
 #Preview {
-    HomeTabView(vm: HomeTabViewModel(amounts: [(Currency(iso: "USD", name: "US Dolars"), 50000.50),
-                                               (Currency(iso: "EUR", name: "Euro"), 8000.00),
-                                               (Currency(iso: "GBP", name: "British Pound"), 20000.00)],
+    HomeTabView(vm: HomeTabViewModel(currencies: [(Currency(iso: "USD", name: "US Dolars"), 50000.50),
+                                                  (Currency(iso: "EUR", name: "Euro"), 8000.00),
+                                                  (Currency(iso: "GBP", name: "British Pound"), 20000.00)],
                                      useCase: HomeUseCaseMock.preview))
 }

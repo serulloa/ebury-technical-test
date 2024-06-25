@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F903DFD92C2B7CEE00F124E9 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F903DFD82C2B7CEE00F124E9 /* MockError.swift */; };
+		F903DFDD2C2B88EF00F124E9 /* WalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F903DFDC2C2B88EF00F124E9 /* WalletListView.swift */; };
 		F952C2DF2C2963CC000CE743 /* EburyTechnicalTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C2DE2C2963CC000CE743 /* EburyTechnicalTestApp.swift */; };
 		F952C2E32C2963CD000CE743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F952C2E22C2963CD000CE743 /* Assets.xcassets */; };
 		F952C30C2C29A23B000CE743 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C30B2C29A23B000CE743 /* SplashView.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		F903DFD82C2B7CEE00F124E9 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		F903DFDC2C2B88EF00F124E9 /* WalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListView.swift; sourceTree = "<group>"; };
 		F952C2DB2C2963CC000CE743 /* EburyTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EburyTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F952C2DE2C2963CC000CE743 /* EburyTechnicalTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EburyTechnicalTestApp.swift; sourceTree = "<group>"; };
 		F952C2E22C2963CD000CE743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				F952C31F2C2A1742000CE743 /* CurrencyView.swift */,
+				F903DFDC2C2B88EF00F124E9 /* WalletListView.swift */,
 				F952C3292C2AB99D000CE743 /* WIPView.swift */,
 			);
 			path = UI;
@@ -511,6 +514,7 @@
 				F952C3352C2B1615000CE743 /* Endpoint.swift in Sources */,
 				F952C35E2C2B3B28000CE743 /* UseCasesAssembly.swift in Sources */,
 				F952C3202C2A1742000CE743 /* CurrencyView.swift in Sources */,
+				F903DFDD2C2B88EF00F124E9 /* WalletListView.swift in Sources */,
 				F952C32C2C2AD57D000CE743 /* SplashViewModel.swift in Sources */,
 				F952C3182C2A1409000CE743 /* WalletViewModel.swift in Sources */,
 				F952C32A2C2AB99D000CE743 /* WIPView.swift in Sources */,

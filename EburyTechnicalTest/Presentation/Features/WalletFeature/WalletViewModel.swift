@@ -8,9 +8,9 @@
 import Combine
 
 class WalletViewModel: ObservableObject {
-    @Published var currencies: [(currency: Currency, quantity: Double)]
+    @Published var currencies: [(currency: Currency, amount: Double)]
     
-    init(currencies: [(currency: Currency, quantity: Double)]) {
+    init(currencies: [(currency: Currency, amount: Double)]) {
         self.currencies = currencies
     }
 }

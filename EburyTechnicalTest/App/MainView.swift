@@ -13,7 +13,7 @@ struct MainView: View {
     
     var body: some View {
         if isLoaded {
-            HomeTabView(vm: HomeTabViewModel(amounts: amounts, useCase: UseCasesAssembly.home()))
+            HomeTabView(vm: HomeTabViewModel(currencies: amounts, useCase: UseCasesAssembly.home()))
         } else {
             SplashView(vm: SplashViewModel(useCase: UseCasesAssembly.home())) { amounts in
                 self.amounts = amounts

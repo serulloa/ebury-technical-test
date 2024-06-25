@@ -9,9 +9,11 @@ import SwiftUI
 
 struct WalletView: View {
     @StateObject private var vm: WalletViewModel
+    private let onViewAll: () -> Void
     
-    init(vm: WalletViewModel) {
+    init(vm: WalletViewModel, onViewAll: @escaping () -> Void) {
         self._vm = StateObject(wrappedValue: vm)
+        self.onViewAll = onViewAll
     }
     
     var body: some View {
@@ -24,34 +26,16 @@ struct WalletView: View {
                 Spacer()
                 
                 Button {
-                    // TODO
+                    onViewAll()
                 } label: {
                     Text("View all")
                 }
                 .tint(.onSurfaceSelected)
             }
             
-            ForEach(vm.currencies, id: \.currency.iso) { item in
-                CurrencyView(currency: item.currency,
-                             quantity: item.quantity,
-                             flag: flag(iso: item.currency.iso))
-                .padding()
-                .background {
-                    Color.surface
-                        .clipShape(.rect(cornerRadius: 8))
-                        .shadow(color: .black.opacity(0.2), radius: 10, y: 10)
-                }
-            }
+            WalletListView(currencies: vm.currencies)
         }
         .padding()
-    }
-    
-    private func flag(iso: String) -> Image {
-        if let image = UIImage(named: iso) {
-            return Image(uiImage: image)
-        } else {
-            return Image(systemName: "globe")
-        }
     }
 }
 
@@ -64,6 +48,8 @@ struct WalletView: View {
             (Currency(iso: "USD", name: "US Dolars"), 50000.50),
             (Currency(iso: "EUR", name: "Euro"), 8000.00),
             (Currency(iso: "GBP", name: "British Pound"), 20000.00)
-        ]))
+        ])) {
+            print("view all")
+        }
     }
 }

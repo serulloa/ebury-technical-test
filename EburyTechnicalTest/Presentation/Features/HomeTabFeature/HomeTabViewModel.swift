@@ -9,19 +9,20 @@ import Combine
 
 class HomeTabViewModel: ObservableObject {
     @Published var tab: Tab = .home
-    @Published var wallets: [(Currency, Double)]
+    @Published var currencies: [(Currency, Double)]
+    @Published var isViewAll = false
     
-    private var amounts: [(Currency, Double)] {
+    @Published var allCurrencies: [(Currency, Double)] {
         didSet {
-            wallets = Array(amounts.prefix(3))
+            currencies = Array(allCurrencies.prefix(3))
         }
     }
     
     private var useCase: HomeUseCase
     
-    init(amounts: [(Currency, Double)], useCase: HomeUseCase) {
-        self.amounts = amounts
-        self.wallets = Array(amounts.prefix(3))
+    init(currencies: [(Currency, Double)], useCase: HomeUseCase) {
+        self.allCurrencies = currencies
+        self.currencies = Array(currencies.prefix(3))
         self.useCase = useCase
     }
     
@@ -35,9 +36,14 @@ class HomeTabViewModel: ObservableObject {
     }
     
     @MainActor
+    func viewAllButtonPressed() {
+        isViewAll = true
+    }
+    
+    @MainActor
     func refreshData() async {
         do {
-            amounts = try await useCase.getAmounts()
+            allCurrencies = try await useCase.getAmounts()
         } catch {
             print(error)
         }
