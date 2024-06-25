@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct SplashView: View {
+    @StateObject private var vm: SplashViewModel
+    private var onLoaded: () -> Void
+    
+    init(vm: SplashViewModel, onLoaded: @escaping () -> Void) {
+        self._vm = StateObject(wrappedValue: vm)
+        self.onLoaded = onLoaded
+    }
+    
     var body: some View {
         ZStack {
             Image(.splash)
@@ -24,9 +32,17 @@ struct SplashView: View {
                     .tint(Color(.onBackground))
             }
         }
+        .onAppear {
+            vm.load()
+        }
+        .onChange(of: vm.done) { _, _ in
+            onLoaded()
+        }
     }
 }
 
 #Preview {
-    SplashView()
+    SplashView(vm: SplashViewModel()) {
+        print("done")
+    }
 }
