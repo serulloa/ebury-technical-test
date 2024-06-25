@@ -17,9 +17,11 @@ struct SplashView: View {
             VStack {
                 Text("App Test")
                     .font(.largeTitle)
+                    .bold()
                     .foregroundStyle(Color(.onBackground))
                 
                 ProgressView()
+                    .tint(Color(.onBackground))
             }
         }
     }
