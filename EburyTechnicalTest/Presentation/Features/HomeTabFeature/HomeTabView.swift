@@ -23,25 +23,30 @@ struct HomeTabView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 0) {
-                activeHeader()
-                    .background {
-                        Image(.homeClouds)
-                            .resizable()
-                            .scaledToFill()
-                    }
+                HStack {
+                    activeHeader()
+                }
+                .background {
+                    Image(.homeClouds)
+                        .resizable()
+                        .scaledToFill()
+                }
                 
-                activeTab()
-                    .background {
-                        Color(.surfaceVariant)
-                            .clipShape(.rect(topLeadingRadius: 24, topTrailingRadius: 24))
-                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                            .padding(.vertical, -20)
-                    }
-                
+                HStack {
+                    activeTab()
+                }
+                .background {
+                    Color(.surfaceVariant)
+                        .clipShape(.rect(topLeadingRadius: 24, topTrailingRadius: 24))
+                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        .padding(.vertical, -20)
+                }
                 
                 HStack {
                     Button {
-                        vm.tabPressed(.home)
+                        withAnimation {
+                            vm.tabPressed(.home)
+                        }
                     } label: {
                         HStack {
                             Spacer()
@@ -58,7 +63,9 @@ struct HomeTabView: View {
                     }
                     
                     Button {
-                        vm.tabPressed(.products)
+                        withAnimation {
+                            vm.tabPressed(.products)
+                        }
                     } label: {
                         HStack {
                             Spacer()
@@ -93,13 +100,8 @@ struct HomeTabView: View {
     @ViewBuilder
     func activeTab() -> some View {
         if vm.tab == .home {
-            WalletView(vm: WalletViewModel(currencies: [
-                (Currency(iso: "USD", name: "US Dolars"), 50000.50),
-                (Currency(iso: "EUR", name: "Euro"), 8000.00),
-                (Currency(iso: "GBP", name: "British Pound"), 20000.00)
-            ]))
-            .padding(.bottom, 60)
-            
+            WalletView(vm: WalletViewModel(currencies: vm.wallets))
+                .padding(.bottom, 60)
         } else {
             ProductsView()
         }
@@ -157,5 +159,8 @@ struct HomeTabView: View {
 // MARK: - Preview
 
 #Preview {
-    HomeTabView(vm: HomeTabViewModel())
+    HomeTabView(vm: HomeTabViewModel(amounts: [(Currency(iso: "USD", name: "US Dolars"), 50000.50),
+                                               (Currency(iso: "EUR", name: "Euro"), 8000.00),
+                                               (Currency(iso: "GBP", name: "British Pound"), 20000.00)],
+                                     useCase: HomeUseCaseMock.preview))
 }

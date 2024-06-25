@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SplashView: View {
     @StateObject private var vm: SplashViewModel
-    private var onLoaded: () -> Void
+    private var onLoaded: ([(Currency, Double)]) -> Void
     
-    init(vm: SplashViewModel, onLoaded: @escaping () -> Void) {
+    init(vm: SplashViewModel, onLoaded: @escaping ([(Currency, Double)]) -> Void) {
         self._vm = StateObject(wrappedValue: vm)
         self.onLoaded = onLoaded
     }
@@ -22,27 +22,25 @@ struct SplashView: View {
                 .resizable()
                 .ignoresSafeArea()
             
-            VStack {
-                Text("App Test")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundStyle(Color(.onBackground))
-                
-                ProgressView()
-                    .tint(Color(.onBackground))
-            }
+            Text("App Test")
+                .font(.largeTitle)
+                .foregroundStyle(Color(.onBackground))
+            
+            ProgressView()
+                .tint(Color(.onBackground))
+                .padding(.top, 80)
         }
         .onAppear {
             vm.load()
         }
         .onChange(of: vm.done) { _, _ in
-            onLoaded()
+            onLoaded(vm.amounts)
         }
     }
 }
 
 #Preview {
-    SplashView(vm: SplashViewModel()) {
+    SplashView(vm: SplashViewModel(useCase: HomeUseCaseMock.preview)) { _ in
         print("done")
     }
 }
