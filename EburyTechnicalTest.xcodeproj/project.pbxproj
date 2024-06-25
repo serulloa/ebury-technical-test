@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F952C2DF2C2963CC000CE743 /* EburyTechnicalTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C2DE2C2963CC000CE743 /* EburyTechnicalTestApp.swift */; };
 		F952C2E32C2963CD000CE743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F952C2E22C2963CD000CE743 /* Assets.xcassets */; };
-		F952C2E62C2963CD000CE743 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F952C2E52C2963CD000CE743 /* Preview Assets.xcassets */; };
 		F952C2F02C2963CD000CE743 /* EburyTechnicalTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C2EF2C2963CD000CE743 /* EburyTechnicalTestTests.swift */; };
 		F952C2FA2C2963CD000CE743 /* EburyTechnicalTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C2F92C2963CD000CE743 /* EburyTechnicalTestUITests.swift */; };
 		F952C2FC2C2963CD000CE743 /* EburyTechnicalTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C2FB2C2963CD000CE743 /* EburyTechnicalTestUITestsLaunchTests.swift */; };
@@ -21,6 +20,9 @@
 		F952C3182C2A1409000CE743 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C3172C2A1409000CE743 /* WalletViewModel.swift */; };
 		F952C31D2C2A14C0000CE743 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C31C2C2A14C0000CE743 /* Currency.swift */; };
 		F952C3202C2A1742000CE743 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C31F2C2A1742000CE743 /* CurrencyView.swift */; };
+		F952C3232C2AB12C000CE743 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C3222C2AB12C000CE743 /* ProductsView.swift */; };
+		F952C3262C2AB1FD000CE743 /* Preview Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F952C3252C2AB1FD000CE743 /* Preview Content.xcassets */; };
+		F952C32A2C2AB99D000CE743 /* WIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952C3292C2AB99D000CE743 /* WIPView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 		F952C2DB2C2963CC000CE743 /* EburyTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EburyTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F952C2DE2C2963CC000CE743 /* EburyTechnicalTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EburyTechnicalTestApp.swift; sourceTree = "<group>"; };
 		F952C2E22C2963CD000CE743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F952C2E52C2963CD000CE743 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F952C2EB2C2963CD000CE743 /* EburyTechnicalTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EburyTechnicalTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F952C2EF2C2963CD000CE743 /* EburyTechnicalTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EburyTechnicalTestTests.swift; sourceTree = "<group>"; };
 		F952C2F52C2963CD000CE743 /* EburyTechnicalTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EburyTechnicalTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +59,9 @@
 		F952C3172C2A1409000CE743 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		F952C31C2C2A14C0000CE743 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F952C31F2C2A1742000CE743 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		F952C3222C2AB12C000CE743 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		F952C3252C2AB1FD000CE743 /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
+		F952C3292C2AB99D000CE743 /* WIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIPView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,23 +112,15 @@
 		F952C2DD2C2963CC000CE743 /* EburyTechnicalTest */ = {
 			isa = PBXGroup;
 			children = (
-				F952C31E2C2A170E000CE743 /* UI */,
-				F952C31A2C2A14AF000CE743 /* Domain */,
-				F952C30A2C29A224000CE743 /* App */,
-				F952C3082C29A1FD000CE743 /* Features */,
 				F952C2E22C2963CD000CE743 /* Assets.xcassets */,
 				F952C30D2C29A2DD000CE743 /* Colors.xcassets */,
-				F952C2E42C2963CD000CE743 /* Preview Content */,
+				F952C30A2C29A224000CE743 /* App */,
+				F952C31A2C2A14AF000CE743 /* Domain */,
+				F952C3082C29A1FD000CE743 /* Features */,
+				F952C3242C2AB1DB000CE743 /* Preview Content */,
+				F952C31E2C2A170E000CE743 /* UI */,
 			);
 			path = EburyTechnicalTest;
-			sourceTree = "<group>";
-		};
-		F952C2E42C2963CD000CE743 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F952C2E52C2963CD000CE743 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F952C2EE2C2963CD000CE743 /* EburyTechnicalTestTests */ = {
@@ -147,9 +143,10 @@
 		F952C3082C29A1FD000CE743 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				F952C3142C2A13C9000CE743 /* WalletFeature */,
 				F952C30F2C29BC7D000CE743 /* HomeTabFeature */,
+				F952C3212C2AB10B000CE743 /* ProductsFeature */,
 				F952C3092C29A212000CE743 /* SplashFeature */,
+				F952C3142C2A13C9000CE743 /* WalletFeature */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -208,8 +205,25 @@
 			isa = PBXGroup;
 			children = (
 				F952C31F2C2A1742000CE743 /* CurrencyView.swift */,
+				F952C3292C2AB99D000CE743 /* WIPView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		F952C3212C2AB10B000CE743 /* ProductsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				F952C3222C2AB12C000CE743 /* ProductsView.swift */,
+			);
+			path = ProductsFeature;
+			sourceTree = "<group>";
+		};
+		F952C3242C2AB1DB000CE743 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F952C3252C2AB1FD000CE743 /* Preview Content.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F952C30E2C29A2DD000CE743 /* Colors.xcassets in Resources */,
-				F952C2E62C2963CD000CE743 /* Preview Assets.xcassets in Resources */,
+				F952C3262C2AB1FD000CE743 /* Preview Content.xcassets in Resources */,
 				F952C2E32C2963CD000CE743 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,9 +362,11 @@
 				F952C3132C29C4AE000CE743 /* HomeTabViewModel.swift in Sources */,
 				F952C3202C2A1742000CE743 /* CurrencyView.swift in Sources */,
 				F952C3182C2A1409000CE743 /* WalletViewModel.swift in Sources */,
+				F952C32A2C2AB99D000CE743 /* WIPView.swift in Sources */,
 				F952C2DF2C2963CC000CE743 /* EburyTechnicalTestApp.swift in Sources */,
 				F952C31D2C2A14C0000CE743 /* Currency.swift in Sources */,
 				F952C30C2C29A23B000CE743 /* SplashView.swift in Sources */,
+				F952C3232C2AB12C000CE743 /* ProductsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
