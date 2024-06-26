@@ -12,6 +12,8 @@ struct HomeUseCaseImpl: HomeUseCase {
         self.repository = repository
     }
     
+    /// Gets the amounts in the wallets, with its currencies.
+    /// - Returns: A tuple array, as this is easier to handle by the presentation layer.
     func getAmounts() async throws -> [(currency: Currency, amount: Double)] {
         let wallets = try await repository.getWallets()
         let amounts = wallets.map { ($0.currency, $0.amount) }

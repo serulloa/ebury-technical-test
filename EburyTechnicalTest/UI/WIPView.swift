@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A placeholder view for when its parent is not yet implemented.
 struct WIPView: View {
     var body: some View {
         VStack(spacing: 8) {
